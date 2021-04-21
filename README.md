@@ -30,10 +30,10 @@
 
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=dashgin&show_icons=true&locale=en&layout=compact" alt="dashgin" /></p>
 
--
+---
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=dashgin&show_icons=true&locale=en" alt="dashgin" /></p>
 
--
+---
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=dashgin&" alt="dashgin" /></p>
