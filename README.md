@@ -9,11 +9,11 @@
 
 - 🌱 I’m currently learning **React**
 
-- 👨‍💻 All of my projects are available at [github.com/dashgin](github.com/dashgin)
+- 👨‍💻 All of my projects are available at [https://github.com/dashgin](github.com/dashgin)
 
-- 📝 I regularly write articles on [techblog.com/admin](techblog.com/admin)
+- 📝 I regularly write articles on [https://techblog.com/admin](techblog.com/admin)
 - 
-- 📝 My porfolio is on [dashgin.github.io/whoami/](dashgin.github.io/whoami/)
+- 📝 My porfolio is on [https://dashgin.github.io/whoami/](dashgin.github.io/whoami/)
 
 - 💬 Ask me about **Django**
 
@@ -32,5 +32,6 @@
 
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=dashgin&show_icons=true&locale=en" alt="dashgin" /></p>
+
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=dashgin&" alt="dashgin" /></p>
