@@ -30,7 +30,7 @@
 
 ---
 
-<h5><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=dashgin&show_icons=true&locale=en&layout=compact" alt="dashgin" /></h5>  
+<h3><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=dashgin&show_icons=true&locale=en&layout=compact" alt="dashgin" /></h3>  
 
 <h5>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=dashgin&show_icons=true&locale=en" alt="dashgin" /></h5>  
 
