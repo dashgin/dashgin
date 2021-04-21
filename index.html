@@ -1,775 +1,493 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio site of full stack web developer Bob Brady.  Services available to help you create a web app from design, style, code to cloud deploy.">
+  <title>DigiBrady | Full Stack Web Developer | Freelance</title>
+  <link rel="icon" href="/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Raleway:400" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    
+  <style>
+    body {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  color: black;
+  background-color: #e8e8e8;
+}
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 7px 15px;
+  width: auto;
+}
+.navbar-default .navbar-nav>li>a {
+  color: #b90504;
+  font-weight: 600;
+}
+.navbar-default .navbar-nav> li> a:hover, .navbar-default .navbar-nav> li> a:focus {
+  color: #b90504;
+}
+.navbar-default .navbar-nav> .active> a, .navbar-default .navbar-nav> .active> a:hover, .navbar-default .navbar-nav> .active> a:focus {
+  color: white;
+  background-color: #b90504;
+}
+#home, #contact {
+  padding: 80px 25px;
+  background: url('https://raw.githubusercontent.com/bobbrady/static-assets/master/images/sailboat-on-ocean.jpg');
+  background-position: 50% 50%;
+  background-position-x: 50%;
+  background-position-y: 50%;
+  background-size: cover;
+  text-align: center;
+}
+.page-view {
+  min-height: 100vh;
+}
+.page-view h4 {
+  font-size: 1.6em;
+  margin-left: 10px;
+}
+.page-view h4> i {
+  vertical-align: middle;
+}
+.page-view h5 {
+  font-size: 1.2em;
+}
+.page-view a {
+  color: #b90504;
+}
+
+#about, #skills, #services, #portfolio {
+  padding-top: 50px;
+}
+#portfolio {
+  padding-bottom: 50px;
+}
+h1.title {
+  padding-top: 1.8em;
+  font-size: 4em;
+  font-family: Raleway, sans-serif;
+}
+.title {
+  font-family: Raleway, sans-serif;
+}
+.large-font {
+  font-size: 1.2em;
+}
+.page-title {
+  font-size: 2.6em;
+  font-family: Raleway, sans-serif;
+}
+.portfolio-title {
+  font-family: Raleway, sans-serif;
+  font-size: 2em;
+  color: #b90504;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+.red {
+  color: #b90504;
+}
+.container-fluid {
+  padding-top: 90px;
+}
+#services ul, #skills ul {
+  width: auto;
+  display: inline-block;
+}
+#services ul>li, #skills ul>li {
+  text-align: left;
+}
+.fa-pencil, .fa-cogs, .fa-code, .fa-cubes, .fa-dashboard, .fa-certificate, .fa-flask {
+  font-size: 2.5em;
+  color: black;
+}
+.fa-envelope:hover, .fa-facebook:hover, .fa-github:hover, .fa-google-plus:hover, .fa-linkedin:hover, .fa-twitter:hover {
+  color: #777;
+}
+.fa-stack {
+  color: black;
+  font-size: 2em;
+}
+.bg-grey {
+  color: #333;
+}
+.container-fluid {
+  padding: 60px 50px;
+}
+
+/* Tablets */
+
+@media (max-width: 992px) {
+  .navbar ul li a {
+    font-size: .9em;
+    padding-left: 0;
+  }
+}
+
+/* Portrait phones and smaller */
+
+@media (max-width: 480px) {
+  .navbar ul li a {
+    font-size: .9em;
+    padding-left: 0;
+  }
+  .navbar-brand>img {
+    height: auto;
+    padding: 7px 15px;
+    width: 200px;
+  }
+  #home, #contact {
+    padding: 80px 25px;
+  background: url('https://raw.githubusercontent.com/bobbrady/static-assets/master/images/sailboat-on-ocean.jpg');
+    background-position: 60% 50%;
+    background-position-x: 60%;
+    background-position-y: 50%;
+    background-size: cover;
+    text-align: center;
+  }
+  h1.title {
+    font-size: 1.8em;
+    padding-top: 1.6em;
+  }
+  h3.title {
+    font-size: 1.2em;
+  }
+  .container-fluid {
+    padding-top: 80px;
+  }
+  .fa-stack {
+    font-size: 1.3em;
+  }
+}
+  
+  </style>
 </head>
 
-<style>
-    /*----------------------------------------------------------------------------- 
-    BASE STYLES 
-    -----------------------------------------------------------------------------*/
-
-    /* Box Model Hack */
-    * {
-        -moz-box-sizing: border-box;
-        /* Firexfox */
-        -webkit-box-sizing: border-box;
-        /* Safari/Chrome/iOS/Android */
-        box-sizing: border-box;
-        /* IE */
-    }
-
-    body {
-        overflow-x: hidden;
-        font-family: 'Lato', sans-serif;
-
-
-    }
-
-    html {
-        width: 100%;
-        height: 100%;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        margin: 0 0 35px;
-        text-transform: uppercase;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: ;
-        letter-spacing: 1.5px;
-    }
-
-    p {
-        margin: 0 0 25px;
-        font-size: 18px;
-    }
-
-
-    a:hover,
-    a:focus,
-    a:active {
-        outline: none;
-
-    }
-
-    .img {
-        max-width: 180px;
-        height: auto;
-    }
-
-    .btn {
-        background: transparent;
-        color: #fff;
-        width: 150px;
-        height: 35px;
-        border-style: solid;
-        border-radius: 0;
-        font-family: Roboto;
-        font-size: 15px;
-        text-transform: uppercase;
-
-    }
-
-    .btn:hover {
-        background-color: white;
-        transition-duration: 0.5s;
-        color: #0083AE;
-        outline: none;
-    }
-
-    /*----------------------------------------------------------------------------- 
-    NAVIGATION  
-    -----------------------------------------------------------------------------*/
-    .navbar-default .navbar-nav>.active>a,
-    .navbar-default .navbar-nav>.active>a:hover,
-    .navbar-default .navbar-nav>.active>a:focus {
-        color: white;
-        background-color: #0083AE;
-    }
-
-
-    .navbar-default .navbar-brand {
-        color: #0083AE;
-    }
-
-    .navbar-default .navbar-nav>li>a {
-        color: #5E5E5E;
-
-    }
-
-    .navbar-default .navbar-nav>li>a:hover {
-        color: #0083AE;
-    }
-
-    .navbar-default .navbar-brand:hover,
-    .navbar-default .navbar-brand:focus {
-        color: grey;
-    }
-
-    .navbar-default a.navbar-brand:visited {
-        color: ;
-    }
-
-    .navbar {
-        padding: 5px;
-        background-color: white;
-        border-bottom-color: #7F919B;
-    }
-
-    .navbar-brand {
-        text-transform: uppercase;
-        font-family: 'Montserrat', sans-serif;
-        font-size: 25px;
-        letter-spacing: 1px;
-    }
-
-    .navbar li {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 400;
-        font-size: 18px;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
-    }
-
-
-
-
-    /*----------------------------------------------------------------------------- 
-    HEADER
-    -----------------------------------------------------------------------------*/
-
-    .intro {
-        background: #0083AE;
-        background-position: center;
-        background-repeat: no-repeat;
-        display: table;
-        width: 100%;
-        height: auto;
-        margin-top: -18px;
-        padding: 180px 0;
-        text-align: center;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        background-size: cover;
-        -o-background-size: cover;
-    }
-
-    .intro .intro-body {
-        display: table-cell;
-        vertical-align: middle;
-    }
-
-    .intro .intro-body .intro-heading {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 700px;
-        font-size: 80px;
-        color: #fff;
-        margin-top: 80px;
-
-    }
-
-    .intro .intro-text {
-        margin-top: -30px;
-        font-size: 23px;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 700px;
-        color: #fff;
-    }
-
-
-    /*----------------------------------------------------------------------------- 
-    LAYOUT
-    -----------------------------------------------------------------------------*/
-    section {
-        padding: 100px;
-    }
-
-    section h2.section-heading {
-        margin-top: 0;
-        margin-bottom: 15px;
-        font-family: 'Montserrat', sans-serif;
-        font-size: 50px;
-        font-weight: 300;
-        color: #2A2D2F;
-        line-height: 1;
-        letter-spacing: -1px;
-    }
-
-    /* Portfolio */
-    .portfolio-item {
-        margin-top: 20px;
-    }
-
-    #portfolio .portfolio-item {
-        right: 0;
-        margin: 0 0 15px;
-    }
-
-    #portfolio .portfolio-item .portfolio-link {
-        display: block;
-        position: relative;
-        margin: 0 auto;
-        max-width: 350px
-    }
-
-    .portfolio-item .img-responsive {
-        margin: 0 auto;
-    }
-
-    #portfolio .portfolio-item .caption-content {
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    /* Portfolio Modal*/
-    .portfolio-modal .modal-content {
-        padding: 100px 0;
-        min-height: 100%;
-        border: 0;
-        border-radius: 0;
-        text-align: center;
-        background-clip: border-box;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-
-    }
-
-    .portfolio-modal .modal-content h2 {
-        margin: 0;
-        font-size: 3em;
-
-    }
-
-    .portfolio-modal .modal-content img {
-        margin: 0 auto;
-
-    }
-
-    .portfolio-modal .close-modal {
-        position: absolute;
-        top: 25px;
-        right: 25px;
-        width: 75px;
-        height: 75px;
-        background-color: transparent;
-        cursor: pointer;
-    }
-
-    .portfolio-modal .close-modal:hover {
-        opacity: .3;
-    }
-
-    .portfolio-modal .close-modal .lr {
-        z-index: 1051;
-        width: 1px;
-        height: 75px;
-        margin-left: 35px;
-        background-color: #2c3e50;
-        -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        transform: rotate(45deg);
-    }
-
-    .portfolio-modal .close-modal .lr .rl {
-        z-index: 1052;
-        width: 1px;
-        height: 75px;
-        background-color: #2c3e50;
-        -webkit-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-        transform: rotate(90deg);
-    }
-
-    .portfolio-modal .modal-backdrop {
-        display: none;
-        opacity: 0;
-    }
-
-    #about {
-        padding: 200px 50px 200px 50px;
-    }
-
-    #contact {
-        padding: 150px 50px 120px 50px;
-    }
-
-    #footer {
-        padding: 50px 50px 10px 50px;
-
-    }
-
-
-
-    /*----------------------------------------------------------------------------- 
-    SOCIAL BUTTONS  
-    -----------------------------------------------------------------------------*/
-
-    .social {
-        margin: 0;
-        padding: 0;
-    }
-
-    .social ul {
-        margin: 0;
-        padding: 5px;
-    }
-
-    .social ul li {
-        margin: 5px;
-        list-style: none outside none;
-        display: inline-block;
-    }
-
-
-
-    /*----------------------------------------------------------------------------- 
-    MEDIA QUERIES 
-    -----------------------------------------------------------------------------*/
-
-    @media(min-width:769px) {
-
-        .intro .intro-body .intro-heading {
-            font-size: 80px;
-        }
-
-        .intro .intro-body .intro-text {
-            font-size: 23px;
-        }
-
-
-        section h2.section-heading {
-            font-size: 55px;
-        }
-
-        p {
-            margin: 0 0 35px;
-            font-size: 20px;
-            line-height: 1.6;
-        }
-
-
-    }
-
-
-    @media(max-width:768px) {
-
-
-        .intro .intro-body .intro-heading {
-
-            font-size: 60px;
-        }
-
-        .intro .intro-body .intro-text {
-            font-size: 18px;
-
-
-        }
-
-        section h2.section-heading {
-            font-size: 35px;
-
-        }
-
-        section {
-            padding: 100px 0;
-            margin: auto;
-        }
-    }
-
-
-    @media(max-width:360px) {
-        .intro .intro-body .intro-heading {
-
-            font-size: 45px;
-        }
-
-        .intro .intro-body .intro-text {
-            font-size: 18px;
-
-
-        }
-
-
-    }
-
-</style>
-
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-
-    <!-- NAVIGATION -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Simplified</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="navbar-collapse collapse" id="navbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container -->
-    </div><!-- /.navbar -->
-
-    <!-- HEADER -->
-    <header class="intro">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-offset-2 text-center">
-                        <h1 class="intro-heading">Simplified</h1>
-                        <p class="intro-text">A Simple, One-Page Portfolio Template
-                        </p>
-                        <a href="#about" class="btn btn-default page-scroll">Find Out More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- ABOUT SECTION -->
-    <section id="about">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12 col-offset-2 text-center">
-                    <h2 class="section-heading">About</h2>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <p class="lead">Technology stock ecosystem responsive web design graphical user interface vesting
-                        period iPhone social media pivot channels buzz. Startup investor infographic seed round advisor
-                        early adopters network effects iteration growth hacking analytics prototype channels. Holy grail
-                        lean startup termsheet conversion pitch influencer. Social proof success validation. Lorem Ipsum
-                        courtesy of <a href="http://startupsum.com/"><span><strong>startupsum</strong></span></a></p>
-                </div>
-
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- PORTFOLIO SECTION -->
-    <section id="portfolio">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12 col-offset-2 text-center">
-                    <h2 class="section-heading">Portfolio</h2>
-                </div>
-            </div>
-
-            <!-- Portfolio -->
-            <div class="row">
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal-1" class="project-link" data-toggle="modal">
-                        <img src="http://placehold.it/350x250" class="img-responsive" media="(max-width:400px)"
-                            style="width:auto;" alt="">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <h3>Caption 1</h3>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal-2" class="project-link" data-toggle="modal">
-                        <img src="http://placehold.it/350x250" class="img-responsive" media="(max-width:400px)"
-                            style="width:auto;" alt="">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <h3>Caption 2</h3>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal-3" class="project-link" data-toggle="modal">
-                        <img src="http://placehold.it/350x250" class="img-responsive" media="(max-width:400px)"
-                            style="width:auto;" alt="">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <h3>Caption 3</h3>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal-4" class="project-link" data-toggle="modal">
-                        <img src="http://placehold.it/350x250" class="img-responsive" media="(max-width:400px)"
-                            style="width:auto;" alt="">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <h3>Caption 4</h3>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal-5" class="project-link" data-toggle="modal">
-
-                        <img src="http://placehold.it/350x250" class="img-responsive" media="(max-width:400px)"
-                            style="width:auto;" alt="">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <h3>Caption 5</h3>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal-6" class="project-link" data-toggle="modal">
-
-                        <img src="http://placehold.it/350x250" class="img-responsive" media="(max-width:400px)"
-                            style="width:auto;" alt="">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <h3>Caption 6</h3>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12 col-offset-2 text-center">
-                    <h2 class="section-heading">Contact</h2>
-                    <p class="lead">Hello, let's talk</p>
-                </div>
-
-                <!-- Social Media Contact-->
-                <div class="social text-center">
-                    <ul>
-                        <li><a href="https://twitter.com"><i class="fa fa-3x fa-twitter"></i></a></li>
-
-                        <li><a href="https://github.com"><i class="fa fa-3x fa-github"></i></a></li>
-
-                        <li><a href="#"><i class="fa fa-3x fa-envelope-o" aria-hidden="true"></a></i>
-
-
-                    </ul>
-                </div>
-
-
-            </div>
-        </div>
-
-    </section>
-
-    <section id="footer">
-        <p class="text-center">Created by Audrey</p>
-    </section>
-
-
-    <!-- Portfolio Modals -->
-    <div class="portfolio-modal modal fade" id="portfolioModal-1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title 1</h2>
-                            <img src="http://placehold.it/650x450" class="img-responsive img-centered" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header navbar-left">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#site-menu">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="https://raw.githubusercontent.com/bobbrady/static-assets/master/images/digibrady-logo.png" alt="digibrady-logo" /></a>
+      </div>
+      <div class="collapse navbar-collapse" id="site-menu">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#skills">SKILLS</a></li>
+          <li><a href="#services">SERVICES</a></li>
+          <li><a href="#portfolio">PORTFOLIO</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <div class="portfolio-modal modal fade" id="portfolioModal-2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title 2</h2>
-                            <img src="http://placehold.it/650x450" class="img-responsive img-centered" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div id="home" class="container-fluid page-view">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 class="title">Bob Brady</h1>
+        <h3 class="title">Full Stack Software Engineer</h3>
+      </div>
     </div>
+  </div>
 
-    <div class="portfolio-modal modal fade" id="portfolioModal-3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title 3</h2>
-                            <img src="http://placehold.it/650x450" class="img-responsive img-centered" alt="">
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+  <div id="about" class="container bg-grey page-view">
+    <h2 class="page-title text-center red">About</h2>
+    <div class="row">
+      <div class="col-sm-4">
+        <img class="img-responsive center-block" src="https://raw.githubusercontent.com/bobbrady/static-assets/master/images/bob-brady-digibrady.jpg" width="300px" alt="Bob Brady AKA DigiBrady" />
+      </div>
+      <div class="col-sm-8">
+        <p class="large-font">
+          My name is Bob Brady, aka DigiBrady. I’m a full stack software engineer. This means I have a broad skill set and can give you advice ranging from the styling of your website to the JavaScript controlling the behavior of your app to administering the deployment
+          in the Amazon cloud. The goal of this website is to help you make well-informed decisions about your future or current websites.
+        </p>
+        <p class="large-font">
+          I have over 15 years of experience building web applications. I've coded with the web trinity of JavaScript, HTML, and CSS from the beginning. The software stack I have used has varied over years from Perl/CGI/Apache to PHP/Wordpress to Java/JSP/Tomcat
+          to NodeJS/MVC/Templates/Nginx. And the stacks keep coming out! I've recently been working with ReactJS and ES6.
+        </p>
+        <p class="large-font">
+          I’m a Linux expert, having both Red Hat Engineer and CompTIA Linux certifications. My expertise in Java is also verified with a Oracle Certified Professional Java SE 7 certificate. All of my skills can be brought to bear to help you understand your website
+          problems and available solutions.
+        </p>
+      </div>
     </div>
+  </div>
 
-    <div class="portfolio-modal modal fade" id="portfolioModal-4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title 4</h2>
-                            <img src="http://placehold.it/650x450" class="img-responsive img-centered" alt="">
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+  <div id="skills" class="container text-center bg-grey page-view">
+    <h2 class="page-title red">Skills</h2>
+    <h3 class="title">How I do my work</h3>
+    <hr>
+    <div class="row">
+      <div class="col-sm-4">
+        <h4><i class="fa fa-cogs"></i> Backend</h4>
+        <h5><strong>Languages</strong></h5>
+        <ul>
+          <li>Javascript | NodeJS</li>
+          <li>Oracle Certified Java</li>
+          <li>Bash | SH </li>
+        </ul>
+        <h5><strong>Databases</strong></h5>
+        <ul>
+          <li>MongoDB</li>
+          <li>MySQL | MariaDB</li>
+          <li>Oracle</li>
+          <li>PostgreSQL</li>
+        </ul>
+        <h5><strong>API</strong></h5>
+        <ul>
+          <li>REST | SOAP</li>
+          <li>OAUth</li>
+          <li>Google</li>
+        </ul>
+        <h5><strong>Tools | Frameworks</strong></h5>
+        <ul>
+          <li>ExpressJS | Loopback</li>
+          <li>Spring Boot | Hibernate</li>
+          <li>Selenium</li>
+          <li>Mocha | Chai | Istanbul</li>
+          <li>Webpack | Gulp</li>
+          <li>GIT | SVN</li>
+          <li>Wordpress</li>
+        </ul>
+      </div>
+      <div class="col-sm-4">
+        <h4><i class="fa fa-code"></i> Frontend</h4>
+        <h5><strong>HTML | CSS</strong></h5>
+        <ul>
+          <li>HTML5 (+Canvas)</li>
+          <li>CSS3 & Responsive</li>
+          <li>Stylus</li>
+        </ul>
+        <h5><strong>JavaScrpt</strong></h5>
+        <ul>
+          <li>ES5 | ES6</li>
+          <li>Babel | ESLint</li>
+          <li>jQuery</li>
+          <li>Backbone.js</li>
+          <li>React | React Router</li>
+          <li>AngularJS</li>
+        </ul>
+        <h5><strong>Tools | Frameworks</strong></h5>
+        <ul>
+          <li>Bootstrap</li>
+          <li>Font Awesome | Google fonts</li>
+          <li>Stylus | Less</li>
+          <li>Jade | Pug | Handlebars</li>
+          <li>Gulp | Webpack</li>
+        </ul>
+      </div>
+      <div class="col-sm-4">
+        <h4><i class="fa fa-flask"></i> Other</h4>
+        <h5><strong>DevOps | AWS</strong></h5>
+        <ul>
+          <li>EC2 Instance Admin</li>
+          <li>S3 Bucket Admin</li>
+          <li>Cache Cluster Admin</li>
+          <li>Virtual Cloud Admin</li>
+        </ul>
+        <h5><strong>Linux</strong></h5>
+        <ul>
+          <li>Certified RedHat Engineer</li>
+          <li>Certified CompTIA Linux</li>
+        </ul>
+        <h5><strong>Tools | Frameworks</strong></h5>
+        <ul>
+          <li>Docker</li>
+          <li>Bamboo CI Admin</li>
+        </ul>
+      </div>
     </div>
+  </div>
 
-    <div class="portfolio-modal modal fade" id="portfolioModal-5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title 5</h2>
-                            <img src="http://placehold.it/650x450" class="img-responsive img-centered" alt="">
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+  <div id="services" class="container text-center bg-grey page-view">
+    <h2 class="page-title red">Services</h2>
+    <h3 class="title">What I can do for you</h3>
+    <hr>
+    <div class="row">
+      <div class="col-sm-4">
+        <h4><i class="fa fa-cogs"></i> Backend</h4>
+        <h5><strong>Coding</strong></h5>
+        <ul>
+          <li>Build RESTful APIs in Node.js, Java</li>
+          <li>Stand-up services quickly using best practices</li>
+          <li>Code and integrate microservices</li>
+          <li>Take advantage of open source like Drools Rules Engine</li>
+        </ul>
+        <h5><strong>Data</strong></h5>
+        <ul>
+          <li>Select the best type of DB: SQL | NoSQL</li>
+          <li>Design the data model</li>
+          <li>Tune and debug DB calls</li>
+        </ul>
+        <h5><strong>Security</strong></h5>
+        <ul>
+          <li>Use Authentication/Authorization standards like OAuth</li>
+          <li>Configure AWS cloud firewall rules</li>
+          <li>System monitoring for warning signs</li>
+        </ul>
+      </div>
+      <div class="col-sm-4">
+        <h4><i class="fa fa-code"></i> Frontend</h4>
+        <h5><strong>Coding</strong></h5>
+        <ul>
+          <li>Use Backbone.js, AngularJS, ReactJS browser-side</li>
+          <li>Develop modular, object-oriented code with design patterns</li>
+          <li>Quality assurance with linting, tests, coverage analysis</li>
+          <li>Take advantage of open source like Moment or Async</li>
+          <li>Ability to use jQuery to meet spec</li>
+        </ul>
+        <h5><strong>Styling</strong></h5>
+        <ul>
+          <li>Layout first, then style to spec</li>
+          <li>Preprocessors like Stylus for less churn</li>
+        </ul>
+      </div>
+      <div class="col-sm-4">
+        <h4><i class="fa fa-flask"></i> Other</h4>
+        <h5><strong>Architecture | Design</strong></h5>
+        <ul>
+          <li>Work with client to identify use cases</li>
+          <li>Build out user stories from use cases</li>
+          <li>Work with client to ensure API meets spec</li>
+          <li>Plan microservice design up front, verify before code</li>
+          <li>Document architecture and design for client</li>
+        </ul>
+        <h5><strong>Amazon Web Service</strong></h5>
+        <ul>
+          <li>Create secure virtual public cloud for client</li>
+          <li>Create instances for microservice deployment</li>
+          <li>Configure 3rd party servers or load balancing</li>
+        </ul>
+        <h5><strong>Test | CI</strong></h5>
+        <ul>
+          <li>Configure CI server like Jenkins</li>
+          <li>Configure CI test runs after master check-in</li>
+          <li>Create unit, integration, UI, and load tests</li>
+          <li>Present CI results to client</li>
+        </ul>
+      </div>
     </div>
+  </div>
 
-    <div class="portfolio-modal modal fade" id="portfolioModal-6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title 6</h2>
-                            <img src="http://placehold.it/650x450" class="img-responsive img-centered" alt="">
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+  <div id="portfolio" class="container bg-grey page-view">
+    <h2 class="page-title red text-center">Portfolio</h2>
+    <h3 class="portfolio-title text-center">XiaoBlog: MEAN stack blog engine</h3>
+    <br>
+    <div class="row">
+      <div class="col-sm-4">
+        <figure>
+          <img class="img-responsive" src="https://raw.githubusercontent.com/bobbrady/static-assets/master/images/xiao-blog-node-blog-engine-screen-shot.png" alt="Xiao Blog Engine Screen Shot" />
+          <figcaption>
+            <p class="large-font">
+              Xiao Blog Engine is an open source blogging platform built with Node.js, MongoDB, and Bootstrap. It is designed to be easy-to-use, responsive, and lightning fast.
+            </p>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="col-sm-4">
+        <img class="img-responsive" src="https://raw.githubusercontent.com/bobbrady/static-assets/master/images/xiao-node-js-blog-engine-responsive-design.jpg" alt="Xiao Blog Engine Responsive Design" />
+        <figcaption>
+          <p class="large-font">
+            Xiao Node.js has a responsive design, shown here rendered on a mobile device.
+          </p>
+        </figcaption>
+      </div>
+      <div class="col-sm-4">
+        <img class="img-responsive" src="https://raw.githubusercontent.com/bobbrady/static-assets/master/images/node-js-mvc-design-pattern-xiao-blog.jpg" alt="Xiao Blog NodeJS MVC Design Pattern" />
+        <figcaption>
+          <p class="large-font">
+            Xiao Node.js architecture utilizes a JavaScript MVC pattern and MongoDB modeling with Mongoose JS.
+          </p>
+        </figcaption>
+      </div>
     </div>
-    <!-- /Project Modals -->
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="https://use.fontawesome.com/2c22feb109.js"></script>
-    <script>
-        // jQuery script to nav scroll to section
+    <br>
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
+        <p class="large-font">
+          Xiao Blog Engine many more features available, details are given in the Features section at the live demo site: <a href="http://xiaoblog.digibrady.com" target="_blank">xioablog.digibrady.com</a>. Source code for Xiao blog engine can be found
+          on the GitHub repo: <a href="https://github.com/bobbrady/node.js-blog-engine" target="_blank">nodejs-blog-engine</a>
+        </p>
+      </div>
+    </div>
+    <h3 class="portfolio-title text-center">Sharp Reporter: a  Responsive Bootstrap Theme</h3>
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-4">
+        <figure>
+          <img class="img-responsive" src="https://raw.githubusercontent.com/bobbrady/static-assets/master/images/sharp-reporter-bootstrap-responsive-theme-on-laptop.jpg" alt="Sharp Reporter Bootstrap Responsive Theme on a Laptop" />
+          <figcaption class="large-font">
+            Sharp Reporter is a clean, minimalist design suitable for blogging.
+          </figcaption>
+        </figure>
+      </div>
+      <div class="col-sm-4">
+        <img class="img-responsive" src="https://raw.githubusercontent.com/bobbrady/static-assets/master/images/sharp-reporter-bootstrap-responsive-theme-on-laptop.jpg" alt="Sharp Reporter Bootstrap Responsive Theme on a Mobile Device" />
+        <figcaption class="large-font">
+          Sharp Reporter on-the-street beat with a responsive design for mobile devices.
+        </figcaption>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-offset-2 col-sm-8">
+        <p class="large-font">
+          A live demo of the template can be seen at <a href="http://www.digibrady.com/portfolio/bootstrap-responsive-theme-sharpreporter.html" target="_blank">www.digibrady.com</a> The Sharp Reporter source code is freely available at the GitHub repo:
+          <a href="https://github.com/bobbrady/sharp-reporter" target="_blank">sharp-reporter</a>.
+        </p>
+      </div>
+    </div>
+  </div>
 
-        $(document).ready(function () {
-            $('.nav li a').click(function () {
-                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
-                    && location.hostname == this.hostname) {
-                    var $target = $(this.hash);
-                    $target = $target.length && $target
-                        || $('[name=' + this.hash.slice(1) + ']');
-                    if ($target.length) {
-                        var targetOffset = $target.offset().top;
-                        $('html,body')
-                            .animate({ scrollTop: targetOffset }, 1000);
-                        return false;
-                    }
-                }
-            });
-        });
-
-        //jQuery script to page-scroll & animate fa-icon
-
-        $(document).ready(function () {
-            $('a.page-scroll').click(function () {
-                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                    var $target = $(this.hash);
-                    $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
-                    if ($target.length) {
-                        var targetOffset = $target.offset().top;
-                        $('html,body').animate({
-                            scrollTop: targetOffset
-                        }, 1000);
-                        return false;
-                    }
-                }
-            });
-        });
-    </script>
+  <div id="contact" class="container-fluid text-center bg-grey page-view">
+    <h2 class="page-title red">Contact</h2>
+    <h3 class="title">Feel free to reach out to me</h3>
+    <div class="row">
+      <div class="col-sm-12">
+        <ul class="list-inline">
+          <li>
+            <a href="https://twitter.com/digitalbrady" target="_blank">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/bobbrady" target="_blank">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/bobbrady" target="_blank">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </body>
-
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script>
+</script>
 </html>
