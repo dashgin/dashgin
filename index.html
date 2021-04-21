@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Portfolio site of full stack web developer Bob Brady.  Services available to help you create a web app from design, style, code to cloud deploy.">
-  <title>DigiBrady | Full Stack Web Developer | Freelance</title>
+  <title>Dashgin | Web Developer</title>
   <link rel="icon" href="/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Raleway:400" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -274,9 +274,7 @@ h1.title {
         <h5><strong>JavaScrpt</strong></h5>
         <ul>
           <li>ES5 | ES6</li>
-          <li>Babel | ESLint</li>
           <li>jQuery</li>
-          <li>Backbone.js</li>
           <li>React | React Router</li>
           <li>AngularJS</li>
         </ul>
@@ -284,9 +282,6 @@ h1.title {
         <ul>
           <li>Bootstrap</li>
           <li>Font Awesome | Google fonts</li>
-          <li>Stylus | Less</li>
-          <li>Jade | Pug | Handlebars</li>
-          <li>Gulp | Webpack</li>
         </ul>
       </div>
       <div class="col-sm-4">
@@ -489,5 +484,32 @@ h1.title {
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script>
+  
+    $(document).ready(function() {
+
+      // Fix for "hamburger menu" not collapsing after a click on menu item
+      $("nav").find("li").on("click", "a", function() {
+        $('.navbar-collapse.in').collapse('hide');
+      });
+
+      // Add smooth scrolling to all nav links
+      $(".navbar a, footer a[href='#home']").on('click', function(event) {
+        // Don't scroll if on a mobile phone, it's too awkward
+        if (this.hash !== "" && $(window).width() > 480) {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+          // Store hash
+          var hash = this.hash;
+          // Scroll to hash tag in 700 ms
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 700, function() {
+            // Add hash (#) to URL when done scrolling
+            window.location.hash = hash;
+          });
+        }
+      });
+
+    });
 </script>
 </html>
