@@ -4,13 +4,13 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=dashgin&label=Profile%20views&color=0e75b6&style=flat" alt="dashgin" /> </p>
 
-- 🔭 I’m currently working on **E-Commerce**
+- 🔭 I’m currently working on **Startup**
 
 - 🌱 I’m currently learning **React JS**
 
-- 👨‍💻 All of my projects are available at [https://dashgin.github.io/dashgin/](https://dashgin.github.io/dashgin/)
+<!-- - 👨‍💻 All of my projects are available at [https://dashgin.github.io/dashgin/](https://dashgin.github.io/dashgin/) -->
 
-- 📝 I regularly write articles on [https://dashgin.me](https://dashgin.me/)
+- 📝 I/ write articles on [https://dashgin.me](https://dashgin.me/)
 
 - 💬 Ask me about **Python / Django**
 
