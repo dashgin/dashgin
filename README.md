@@ -10,7 +10,8 @@
 - 💬 Ask me about **Python / Django**
 - 📫 How to reach me **xudiyevdasqin7777@gmail.com**
 
-<img align="right" src="https://github-readme-stats.vercel.app/api/top-langs?username=dashgin&show_icons=true&locale=en&theme=dark" alt="dashgin" />
+<!-- <img align="right" src="https://github-readme-stats.vercel.app/api/top-langs?username=dashgin&show_icons=true&locale=en&theme=dark" alt="dashgin" /> -->
+<img align="right" src="https://github-readme-stats.vercel.app/api?username=dashgin&show_icons=true&theme=dark" alt="dashgin" />
 
 - #### Programming Languages
 <p align="left">
