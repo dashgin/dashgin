@@ -1,6 +1,6 @@
 <h1 align="center">Hi 👋, I'm Dashgin</h1>
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Cooper+Black&color=18BEF7&size=30&center=true&vCenter=true&width=1000&height=30&lines=I'm+a+Software+Developer;I'm+Student;Always+try+to+learn+new+things)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Cooper+Black&color=18BEF7&size=30&center=true&vCenter=true&width=1000&height=30&lines=I'm+a+Software+Engineer;Always+try+to+learn+new+things)](https://git.io/typing-svg)
 
 <!-- <p align="left"> <img src="https://komarev.com/ghpvc/?username=dashgin&label=Profile%20views&color=0e75b6&style=flat" alt="dashgin" /> </p> -->
 <!-- - 🔭 I’m currently working on **Invested Startup** -->
