@@ -7,7 +7,7 @@
 <!-- - 🔭 I’m currently working on **Invested Startup** -->
 <!-- - 🌱 I’m currently learning **React JS** -->
 <!-- - 👨‍💻 All of my projects are available at [https://dashgin.github.io/dashgin/](https://dashgin.github.io/dashgin/) -->
-- 📝 I write articles on [https://dashgin.me](https://dashgin.me/)
+- 📝 I write articles on [https://dashgin.com](https://dashgin.com/)
 - 💬 Ask me about **Python / Django**
 - 📫 How to reach me **xudiyevdasqin7777@gmail.com**
 
