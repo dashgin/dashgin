@@ -6,10 +6,10 @@
 <!-- <p align="left"> <img src="https://komarev.com/ghpvc/?username=dashgin&label=Profile%20views&color=0e75b6&style=flat" alt="dashgin" /> </p> -->
 <!-- - 🔭 I’m currently working on **Invested Startup** -->
 <!-- - 🌱 I’m currently learning **React JS** -->
-<!-- - 👨‍💻 All of my projects are available at [https://dashgin.github.io/dashgin/](https://dashgin.github.io/dashgin/) -->
-- 📝 I write articles on [https://dashgin.com](https://dashgin.com/)
+- 👨‍💻 All of my projects are available at [https://dashgin.com/](https://dashgin.com/)
+- 📝 I write articles on [https://blog.dashgin.com](https://blog.dashgin.com/)
 - 💬 Ask me about **Python / Django**
-- 📫 How to reach me **xudiyevdasqin7777@gmail.com**
+- 📫 How to reach me **dashginkhudiyev@gmail.com**
 
 <!-- <img align="right" src="https://github-readme-stats.vercel.app/api/top-langs?username=dashgin&show_icons=true&locale=en&theme=dark" alt="dashgin" /> -->
 <!--
