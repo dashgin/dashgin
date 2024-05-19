@@ -8,7 +8,7 @@
 <!-- - 🌱 I’m currently learning **React JS** -->
 - 👨‍💻 All of my projects are available at [https://dashgin.com/](https://dashgin.com/)
 - 📝 I write articles on [https://blog.dashgin.com](https://blog.dashgin.com/)
-- 💬 Ask me about **Python / Django**
+- 💬 Ask me about **Python / Django / Fastapi**
 - 📫 How to reach me **dashginkhudiyev@gmail.com**
 
 <!-- <img align="right" src="https://github-readme-stats.vercel.app/api/top-langs?username=dashgin&show_icons=true&locale=en&theme=dark" alt="dashgin" /> -->
