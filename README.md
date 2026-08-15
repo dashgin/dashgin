@@ -1,35 +1,45 @@
-<h1 align="center">Hi 👋, I'm Dashgin</h1>
+<h1 align="center">Hi, I'm Dashgin 👋</h1>
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Cooper+Black&color=18BEF7&size=30&center=true&vCenter=true&width=1000&height=30&lines=I'm+a+Software+Engineer;Always+try+to+learn+new+things)](https://git.io/typing-svg)
- <img align="right" src="https://github-readme-stats.vercel.app/api?username=dashgin&show_icons=true&theme=dark" alt="dashgin" />
-
-<!-- <p align="left"> <img src="https://komarev.com/ghpvc/?username=dashgin&label=Profile%20views&color=0e75b6&style=flat" alt="dashgin" /> </p> -->
-<!-- - 🔭 I’m currently working on **Invested Startup** -->
-<!-- - 🌱 I’m currently learning **React JS** -->
-- 👨‍💻 All of my projects are available at [https://dashgin.com/](https://dashgin.com/)
-- 📝 I write articles on [https://blog.dashgin.com](https://blog.dashgin.com/)
-- 💬 Ask me about **Python / Django / Fastapi**
-- 📫 How to reach me **dashginkhudiyev@gmail.com**
-
-<!-- <img align="right" src="https://github-readme-stats.vercel.app/api/top-langs?username=dashgin&show_icons=true&locale=en&theme=dark" alt="dashgin" /> -->
-<!--
-- #### Programming Languages
-<p align="left">
-    <img alt="Python" src="https://img.shields.io/badge/python-%2314354C.svg?&style=for-the-badge&logo=python&logoColor=white"/>
-    <img alt="JavaScript" src="https://img.shields.io/badge/javascript-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/>
+<p align="center">
+  <strong>Software Engineer &amp; AI-agent wrangler</strong> 🤖 — Python backend, microservices, and applied AI.<br/>
+  I build LLM products with data privacy in mind, work on payment &amp; security-sensitive systems, and self-host most of what I ship.
 </p>
- 
-- #### Frameworks and libraries
-<p align="left">
-    <img alt="Django" src="https://img.shields.io/badge/django-%23092E20.svg?&style=for-the-badge&logo=django&logoColor=white"/> 
-    <img alt="React" src="https://img.shields.io/badge/react-%2320232a.svg?&style=for-the-badge&logo=react&logoColor=%2361DAFB"/>
-</p>  -->
 
+<p align="center">
+  <a href="https://dashgin.com">Website</a> ·
+  <a href="https://dashgin.com/blog">Blog</a> ·
+  <a href="https://dashgin.com/resume.pdf">Résumé</a> ·
+  <a href="https://linkedin.com/in/dashgin-khudiyev">LinkedIn</a>
+</p>
 
-<!-- - #### Operating System
-<p align="left">
-   <img alt="Arch Linux" src="https://img.shields.io/badge/Arch-E95420?style=for-the-badge&logo=arch&logoColor=white" />
-   <img alt="Debian" src="https://img.shields.io/badge/Debian-D70A53?style=for-the-badge&logo=debian&logoColor=white" />
-</p> -->
+---
 
-### Connect with me: <a href="https://twitter.com/_dashgin_" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="_dashgin_" height="30" width="40" /></a> <a href="https://linkedin.com/in/dashgin-khudiyev" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="any" height="30" width="40" /></a> <a href="https://instagram.com/dasqinxudiyev" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="dasqinxudiyev" height="30" width="40" /></a>
+### ✍️ Latest writing
+
+- **[How My Self-Hosted AI Agent Burned $1,557 in 2 Days](https://dashgin.com/blog/self-hosted-ai-agent-burned-1557)** — a flagship model + 546 tools per call + no caching = a four-figure surprise.
+- **[MCP Tool Bloat: Why 546 Tools Cost Me $1,557 (and the ~700-Token Fix)](https://dashgin.com/blog/mcp-tool-bloat-deferred-tools-caching)** — the technical deep-dive: deferred tools, prompt caching, and replacing an MCP server with a skill.
+
+### 🤖 AI skills & tooling
+
+Custom agent skills I've built live in [`skills/`](./skills/) — the flagship example,
+[the `dokploy` skill](./skills/dokploy/SKILL.md), replaces a 546-tool MCP server with a ~700-token curl doc.
+
+### 🛠️ Selected projects
+
+| Project | What it is |
+|---|---|
+| **[Praxis](https://praxis.az)** | Online education platform — React web, Django API, React Native app |
+| **[Brinix](https://brinix.io)** | AI brand asset management — auto-tagging & natural-language search |
+| **Mluck** | Real-estate platform — scrapes listings, predicts prices, maps them |
+| **ubot** | Distributed marketplace-automation fleet — control plane + per-shop agents on a WireGuard mesh |
+| **itopix** | IT hiring platform backend with subscription billing |
+
+Full list → **[dashgin.com/projects](https://dashgin.com/projects)**
+
+### 🧰 Stack
+
+`Python` · `Django` · `Django Ninja` · `FastAPI` · `TypeScript` · `React` · `Expo` · `Postgres` · `Dokploy` · `AWS`
+
+---
+
+<sub>This repo also builds <a href="https://dashgin.com">dashgin.com</a> (Astro → Dokploy, self-hosted). Source in <code>src/</code>, posts in <code>src/content/blog/</code>, skills in <code>skills/</code>.</sub>

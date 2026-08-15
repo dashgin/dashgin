@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import projects from '../data/projects.json';
+import site from '../data/site.json';
+
+const base = import.meta.env.BASE_URL;
+const posts = (await getCollection('blog'))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const fmt = (d) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+
+const experience = [
+  { company: 'EPAM Systems', role: 'Senior Software Engineer', dates: '2026 → now',
+    note: 'High-load enterprise applications — Python + React, system architecture and microservices.' },
+  { company: 'Remofirst', role: 'Software Engineer', dates: '2025 → 2026',
+    note: 'Global hiring & payroll platform. Multi-agent AI interviewer on Pydantic AI, Airwallex payouts, 1,000+ payment batches.' },
+  { company: 'Prodigitrack', role: 'Lead / Founding Engineer', dates: '2022 → 2025',
+    note: 'Grew the team 1→7, led monolith→microservices migration, API gateway + RBAC through enterprise security audits.' },
+];
+---
+<BaseLayout>
+  <!-- ID + STATS -->
+  <div class="hero">
+    <section class="panel pad">
+      <div class="eyebrow">operator</div>
+      <h1>Dashgin Khudiyev</h1>
+      <p class="role">software engineer · ai systems · self-hosted</p>
+      <p class="bio">
+        Python &amp; Django backends, LLM products built with data privacy in mind,
+        payment-critical systems, React &amp; React Native up front — running on
+        infrastructure I operate myself.
+      </p>
+      <div class="chips">
+        {['python', 'django', 'fastapi', 'react', 'react-native', 'pydantic-ai', 'postgres', 'aws', 'docker'].map((c) => <span>{c}</span>)}
+      </div>
+    </section>
+
+    {site.show.stats && (
+    <section class="panel pad stats-panel">
+      <div class="p-head">status <span class="right faint" id="uptime">—</span></div>
+      <div class="stats">
+        <a class="stat" href={`${base}projects`}><b>{projects.length}</b><i>services deployed</i></a>
+        <a class="stat" href={`${base}resume.pdf`}><b>5</b><i>years shipping</i></a>
+        <a class="stat" href={`${base}blog`}><b>{posts.length}</b><i>field reports</i></a>
+        <a class="stat" href={`${base}projects`}><b>3</b><i>platforms shipped</i></a>
+      </div>
+    </section>
+    )}
+  </div>
+
+  {/* EXPERIENCE — toggle via src/data/site.json → show.experience */}
+  {site.show.experience && (
+  <section>
+    <div class="sec-head">experience <span class="faint">// 2022 → now</span></div>
+    <div class="xp-grid">
+      {experience.map((e) => (
+        <div class="panel pad">
+          <div class="xp__dates">{e.dates}</div>
+          <div class="xp__co">{e.company}</div>
+          <div class="xp__role">{e.role}</div>
+          <p class="xp__note">{e.note}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+  )}
+
+  <!-- SERVICES -->
+  {site.show.services && (
+  <section>
+    <div class="sec-head">services <span class="faint">// {projects.length} running</span></div>
+    <div class="grid">
+      {projects.map((p) => (
+        <a class="panel svc" href={p.link || `${base}projects`}>
+          <div class="svc__top">
+            <div class={p.logo ? 'svc__logo has-img' : 'svc__logo'}>
+              {p.logo ? <img src={`${base}${p.logo}`} alt={p.name} /> : p.name.charAt(0)}
+            </div>
+            <div class="svc__id">
+              <span class="svc__name">{p.name}</span>
+              <span class="svc__meta">{p.label?.toLowerCase()} · {p.year}</span>
+            </div>
+            <span class="svc__status"><span class="dot"></span>live</span>
+          </div>
+          <p class="svc__desc">{p.description}</p>
+          <div class="svc__stack">{p.stack.slice(0, 4).map((s) => <span>{s}</span>)}</div>
+          <div class="svc__links">
+            {p.link && <span>↗ live</span>}
+            {p.appStore && <span>↗ app store</span>}
+            {p.playStore && <span>↗ play</span>}
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+  )}
+
+  <!-- LOG + FIELD REPORTS -->
+  <div class="lower">
+    {site.show.eventLog && (
+    <section class="panel pad">
+      <div class="p-head">event log <span class="tag">replay</span></div>
+      <div class="log" id="log"></div>
+    </section>
+    )}
+
+    {site.show.fieldReports && (
+    <div class="sidecol">
+      <section class="panel pad">
+        <div class="p-head">field reports</div>
+        {posts.map((p) => (
+          <a class="doc" href={`${base}blog/${p.slug}`}>
+            <span class="doc__date">{fmt(p.data.pubDate)}</span>
+            <span class="doc__title">{p.data.title}</span>
+          </a>
+        ))}
+      </section>
+    </div>
+    )}
+  </div>
+
+  <script is:inline>
+    (() => {
+      const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* uptime since first shipped product */
+      const up = document.getElementById('uptime');
+      if (up) {
+        const T0 = new Date('2021-01-01T00:00:00Z').getTime();
+        const tickUp = () => {
+          let s = Math.floor((Date.now() - T0) / 1000);
+          const y = Math.floor(s / 31557600); s -= y * 31557600;
+          const d = Math.floor(s / 86400); s -= d * 86400;
+          const h = Math.floor(s / 3600); s -= h * 3600;
+          const m = Math.floor(s / 60); s -= m * 60;
+          up.textContent = `uptime ${y}y ${d}d ${h}h ${m}m ${s}s`;
+        };
+        tickUp(); setInterval(tickUp, 1000);
+      }
+
+      /* event log — slow replay */
+      const log = document.getElementById('log');
+      if (log) {
+        const entries = [
+          ['deploy', 'praxis.az → production'],
+          ['infra', 'wireguard mesh: 4 nodes healthy'],
+          ['agent', 'store screenshots rendered 48/48'],
+          ['deploy', 'brinix: ai tagging pipeline green'],
+          ['infra', 'pgbouncer pool: calm'],
+          ['agent', 'token budget guard: within cap'],
+          ['deploy', 'sukanaz → app store + play store'],
+          ['infra', 'monolith → microservices: migration done'],
+          ['deploy', 'mluck: price model retrained · error ↓'],
+          ['infra', 'ubot: 4 roles, one image, zero drama'],
+          ['warn', 'coffee reserves low → auto-refilled'],
+          ['deploy', 'field report published: mcp tool bloat'],
+          ['infra', 'backups verified · restore drill passed'],
+        ];
+        const kindClass = { deploy: 'k--deploy', agent: 'k--agent', infra: 'k--infra', warn: 'k--warn' };
+        let idx = 0;
+        const addLine = () => {
+          const [kind, msg] = entries[idx % entries.length];
+          idx++;
+          const row = document.createElement('div');
+          row.innerHTML = `<span class="t">${new Date().toLocaleTimeString('en-GB')}</span><span class="k ${kindClass[kind]}">[${kind}]</span><span class="m">${msg}</span>`;
+          log.appendChild(row);
+          while (log.children.length > 10) log.removeChild(log.firstChild);
+        };
+        for (let i = 0; i < 6; i++) addLine();
+        if (!reduced) setInterval(addLine, 4000);
+      }
+    })();
+  </script>
+</BaseLayout>

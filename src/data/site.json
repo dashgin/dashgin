@@ -1,0 +1,9 @@
+{
+  "show": {
+    "experience": false,
+    "services": true,
+    "eventLog": true,
+    "fieldReports": true,
+    "stats": true
+  }
+}

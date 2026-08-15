@@ -1,0 +1,100 @@
+[
+  {
+    "name": "Praxis",
+    "tagline": "Online education platform",
+    "description": "An education platform for teachers and students — I built the React web app, the Django backend, and the React Native mobile app.",
+    "stack": ["React", "Django", "React Native", "PostgreSQL"],
+    "link": "https://praxis.az",
+    "logo": "logos/praxis.svg",
+    "appStore": "https://apps.apple.com/az/app/praxis-quiz-exam-prep/id6761689615",
+    "playStore": "https://play.google.com/store/apps/details?id=az.praxis.quiz",
+    "year": "2025",
+    "label": "Startup",
+    "status": "live",
+    "featured": true
+  },
+  {
+    "name": "Brinix",
+    "tagline": "AI brand asset management",
+    "description": "An AI-powered brand asset hub — centralizes logos, templates, videos and guidelines with auto-tagging and natural-language search, version control and approval workflows, and multi-tenant sharing for agencies. 50+ file types, connectors for Drive/Dropbox/S3.",
+    "stack": ["Django", "React", "LLM / AI", "AWS", "S3"],
+    "link": "https://brinix.io",
+    "logo": "logos/brinix.svg",
+    "year": "2024",
+    "label": "Startup",
+    "status": "live",
+    "featured": true
+  },
+  {
+    "name": "Mluck",
+    "tagline": "Real-estate price intelligence",
+    "description": "A real-estate platform that scrapes listings, predicts prices with an ML model, and plots everything on a map.",
+    "stack": ["Python", "Playwright", "ML", "PostgreSQL", "Maps"],
+    "link": "https://mluck.io",
+    "logo": "logos/mluck.svg",
+    "year": "2024",
+    "label": "Startup",
+    "status": "project",
+    "featured": true
+  },
+  {
+    "name": "ubot",
+    "tagline": "Distributed marketplace-automation fleet",
+    "description": "A horizontally-scaled control plane for marketplace seller automation. A single Django image runs four roles — web, worker, scheduler, and a per-shop agent — where a central control plane orchestrates a fleet of per-shop agent VMs. Each agent reaches a shared PostgreSQL (through PgBouncer) over a private WireGuard mesh (NetBird), so shops scale out one VM each while all state stays central. A push to main auto-deploys the control plane and rebuilds every agent in the fleet.",
+    "stack": ["Django", "Distributed Systems", "PostgreSQL", "PgBouncer", "NetBird / WireGuard", "Dokploy"],
+    "link": "https://ubot.yuzbir.agency",
+    "year": "2025",
+    "label": "Indie",
+    "status": "project",
+    "featured": true
+  },
+  {
+    "name": "RemoFirst",
+    "tagline": "AI interviewer + payments at a global payroll platform",
+    "description": "In the Contractors product of a global hiring & payroll platform, I built the first version of RemoHire — a multi-agent AI interviewer (Pydantic AI) that gathers job requirements from clients, with separate agents for asking questions, extracting requirements, and keeping the conversation on track. I also integrated Airwallex for real-time payouts and rewrote payment-file processing to handle 1,000+ payments per batch.",
+    "stack": ["Python", "Pydantic AI", "Django", "React", "Airwallex"],
+    "link": "https://remofirst.com",
+    "logo": "logos/remofirst.png",
+    "year": "2025",
+    "label": "Work",
+    "status": "live",
+    "featured": false
+  },
+  {
+    "name": "dmpservice",
+    "tagline": "Supply-chain management SaaS",
+    "description": "Part of the team building a supply-chain management SaaS on a microservices architecture with CQRS and Event Sourcing — I designed and implemented services, database schemas, deployment, and monitoring.",
+    "stack": ["Microservices", "CQRS", "Event Sourcing", "Python", "PostgreSQL", "Docker"],
+    "link": "https://dmpservice.org",
+    "year": "2024",
+    "label": "Work",
+    "status": "live",
+    "featured": false
+  },
+  {
+    "name": "itopix",
+    "tagline": "IT hiring platform",
+    "description": "Backend for a hiring platform connecting IT companies and candidates — job posting, applications, and subscription plans with recurring payments.",
+    "stack": ["Django", "Python", "PostgreSQL", "Docker"],
+    "link": "https://www.instagram.com/itopix.io/",
+    "logo": "logos/itopix.jpg",
+    "year": "2023",
+    "label": "Startup",
+    "status": "project",
+    "featured": false
+  },
+  {
+    "name": "SukanAz",
+    "tagline": "Course management system",
+    "description": "Backend for a course management system, shipped on Google Play and the App Store for students and teachers, with a web admin app wired to the Google Drive API for content.",
+    "stack": ["Django", "Python", "PostgreSQL", "Nginx", "Google Drive API"],
+    "link": "https://sukanaz.com",
+    "logo": "logos/sukanaz.png",
+    "appStore": "https://apps.apple.com/az/app/sukan-az/id6449287745",
+    "playStore": "https://play.google.com/store/apps/details?id=com.sukan.studentquiz.student_quiz_app",
+    "year": "2023",
+    "label": "Client",
+    "status": "live",
+    "featured": false
+  }
+]

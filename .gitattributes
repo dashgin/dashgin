@@ -1,1 +1,2 @@
-src/** linguist-vendored
+# Count the site source in language stats (Astro).
+*.astro linguist-language=Astro

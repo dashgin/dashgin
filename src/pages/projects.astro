@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import projects from '../data/projects.json';
+const base = import.meta.env.BASE_URL;
+---
+<BaseLayout title="services" description="Products and systems I've built — AI asset management, education, real-estate intelligence, marketplace automation, and more.">
+  <section>
+    <div class="sec-head">services <span class="faint">// {projects.length} running</span></div>
+    <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));">
+      {projects.map((p) => (
+        <div class="panel svc">
+          <div class="svc__top">
+            <div class={p.logo ? 'svc__logo has-img' : 'svc__logo'}>
+              {p.logo ? <img src={`${base}${p.logo}`} alt={p.name} /> : p.name.charAt(0)}
+            </div>
+            <div class="svc__id">
+              <span class="svc__name">{p.name}</span>
+              <span class="svc__meta">{p.label?.toLowerCase()} · {p.year}</span>
+            </div>
+            <span class="svc__status"><span class="dot"></span>live</span>
+          </div>
+          <p class="svc__desc svc__desc--full">{p.description}</p>
+          <div class="svc__stack">{p.stack.map((s) => <span>{s}</span>)}</div>
+          <div class="svc__links">
+            {p.link && <a href={p.link}><span>↗ live</span></a>}
+            {p.appStore && <a href={p.appStore}><span>↗ app store</span></a>}
+            {p.playStore && <a href={p.playStore}><span>↗ play store</span></a>}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
