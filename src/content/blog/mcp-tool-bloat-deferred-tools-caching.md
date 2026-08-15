@@ -10,7 +10,7 @@ This is the technical companion to *[How My Self-Hosted AI Agent Burned $1,557 i
 
 ## The forensics
 
-Two days of a self-hosted agent, billed against a managed model API:
+Two days of Hermes Agent on Claude Opus 5, billed through AWS Bedrock:
 
 - **3,187 model calls**
 - **350 million input tokens**, 1.86 million output tokens
@@ -21,19 +21,19 @@ Read that last line again. Almost none of the cost was the model *thinking* (out
 
 ## Where 110k tokens per call comes from
 
-One MCP server wrapped a deployment platform and exposed **546 tools**. In a naive agent setup, every one of those 546 tool definitions — name, description, and full JSON parameter schema — gets injected into the model's context on **every** request.
+The Dokploy MCP server exposed **546 tools**. In a naive agent setup, every one of those 546 tool definitions — name, description, and full JSON parameter schema — gets injected into the model's context on **every** request.
 
 That's ~500k tokens of tool schemas riding along whether the user said "deploy the staging service" or just "hi".
 
-At flagship pricing (~$5 per million input tokens), 100k tokens of tools per call = **~$0.50 per call in tool overhead alone**, before the model reads a single word of the actual conversation. Multiply by thousands of agentic tool-loop iterations, add 3× retries on every error, and you get $1,557 in 48 hours.
+At Opus 5 pricing — $5 per million input tokens — 100k tokens of tools per call = **~$0.50 per call in tool overhead alone**, before the model reads a single word of the actual conversation. Multiply by thousands of agentic tool-loop iterations, add 3× retries on every error, and you get $1,557 in 48 hours.
 
 ## Why the same tools + model are nearly free elsewhere
 
-I use the *same* 546-tool integration with the *same* flagship model in my daily coding agent, for a tiny fraction of the cost. Two mechanisms explain the entire gap:
+I use the *same* 546-tool Dokploy MCP server with the *same* Claude Opus 5 in **Claude Code**, for a tiny fraction of the cost. Two mechanisms explain the entire gap:
 
 ### 1. Deferred tools (the #1 difference)
 
-A well-designed agent client doesn't dump all tool schemas into context. It keeps only the tool **names** and a one-line description, then fetches a tool's full parameter schema **on demand** — the first time the model actually wants to call it.
+Claude Code doesn't dump all tool schemas into context. It keeps only the tool **names** and a one-line description, then fetches a tool's full parameter schema **on demand** — the first time the model actually wants to call it.
 
 - Naive agent: 546 full schemas in context, every call → ~500k tokens
 - Deferred: ~546 names in context, schemas fetched as needed → a few k tokens
@@ -52,7 +52,7 @@ My self-hosted agent had caching **off** by default, so it paid full input price
 
 Here's the insight that generalizes. **You almost never need 546 tools. You need about 10.** Deploy, redeploy, restart, stop, logs, create, add-a-domain — that's the daily reality.
 
-So instead of an MCP server that injects 546 typed tools, I wrote a **skill**: a ~700-token Markdown doc that teaches the agent to hit the platform's HTTP API with `curl`, using the *one* generic terminal tool it already has.
+So instead of an MCP server that injects 546 typed tools, I wrote a **skill**: a ~700-token Markdown doc that teaches the agent to hit Dokploy's HTTP API with `curl`, using the *one* generic terminal tool it already has.
 
 | | MCP server | Skill (curl + docs) |
 |---|---|---|
@@ -69,7 +69,7 @@ This is the pattern for any fat MCP on a self-hosted agent: **if a server expose
 
 If I were standing this agent back up, in order of impact:
 
-1. **Don't default to the flagship model.** Use a strong mid-tier or efficient open model as the daily driver; reserve the flagship for genuinely hard tasks. (5–70× cheaper.)
+1. **Don't default to the flagship model.** Use a cheap-but-capable model (Kimi K2.5, GLM-4.7-flash, Qwen3-Next) as the daily driver; reserve Opus for genuinely hard tasks. (5–70× cheaper.)
 2. **Don't load a 546-tool MCP into a client that can't defer.** Replace it with a skill, or trim the toolset. (~100× less context.)
 3. **Enable prompt caching.** Stop re-billing the static prefix. (~90% off repeat calls.)
 4. **Cap the budget low.** Budget alarms lag ~a day; a $50 cap catches a runaway before a $200 one would.
