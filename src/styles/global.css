@@ -28,6 +28,7 @@ body {
   font-size: 15px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; }
@@ -180,12 +181,19 @@ a.stat:hover { border-color: var(--cyan); }
 
 /* ---- lower: log + side column ---- */
 .lower { display: grid; grid-template-columns: 3fr 2fr; gap: 1rem; align-items: start; }
+/* Grid items default to min-width:auto — their unbreakable content (the nowrap
+   log lines) sets a min-content floor wider than the viewport on mobile, which
+   blows out this track (and the page) regardless of overflow:hidden set deeper
+   inside .log. This is the actual fix; the .log rules below just make the
+   clipped text end in an ellipsis instead of a hard cut. */
+.lower > * { min-width: 0; }
 .log {
+  min-width: 0;
   font-family: var(--mono); font-size: 0.72rem; line-height: 1.9;
   height: 280px; overflow: hidden;
   display: flex; flex-direction: column; justify-content: flex-end;
 }
-.log div { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.log div { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .log .t { color: var(--faint); margin-right: 8px; }
 .log .k { margin-right: 6px; }
 .log .k--deploy { color: var(--green); }
