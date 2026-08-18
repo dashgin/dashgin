@@ -1,5 +1,19 @@
 [
   {
+    "name": "TurboDeals",
+    "tagline": "Car marketplace price intelligence",
+    "description": "A car marketplace intelligence platform — I scrape turbo.az listings, price every car against real comparables, and alert users the moment something appears well below market value. Django/Ninja backend, an Expo/React Native mobile app, and a server-rendered web app share one API.",
+    "stack": ["Django", "React Native", "Expo", "PostgreSQL", "Dramatiq"],
+    "link": "https://turbodeals.yuzbir.agency",
+    "logo": "logos/turbodeals.png",
+    "appStore": "https://apps.apple.com/az/app/turbodeals/id6802421907",
+    "playStore": "https://play.google.com/store/apps/details?id=agency.yuzbir.turbodeals",
+    "year": "2026",
+    "label": "Indie",
+    "status": "project",
+    "featured": true
+  },
+  {
     "name": "Praxis",
     "tagline": "Online education platform",
     "description": "An education platform for teachers and students — I built the React web app, the Django backend, and the React Native mobile app.",
@@ -12,6 +26,30 @@
     "label": "Startup",
     "status": "live",
     "featured": true
+  },
+  {
+    "name": "ubot",
+    "tagline": "Distributed marketplace-automation fleet",
+    "description": "A horizontally-scaled control plane for marketplace seller automation. A single Django image runs four roles — web, worker, scheduler, and a per-shop agent — where a central control plane orchestrates a fleet of per-shop agent VMs. Each agent reaches a shared PostgreSQL (through PgBouncer) over a private WireGuard mesh (NetBird), so shops scale out one VM each while all state stays central. A push to main auto-deploys the control plane and rebuilds every agent in the fleet.",
+    "stack": ["Django", "Distributed Systems", "PostgreSQL", "PgBouncer", "NetBird / WireGuard", "Dokploy"],
+    "link": "https://ubot.yuzbir.agency",
+    "logo": "logos/ubot.png",
+    "year": "2025",
+    "label": "Indie",
+    "status": "project",
+    "featured": true
+  },
+  {
+    "name": "RemoFirst",
+    "tagline": "AI interviewer + payments at a global payroll platform",
+    "description": "In the Contractors product of a global hiring & payroll platform, I built the first version of RemoHire — a multi-agent AI interviewer (Pydantic AI) that gathers job requirements from clients, with separate agents for asking questions, extracting requirements, and keeping the conversation on track. I also integrated Airwallex for real-time payouts and rewrote payment-file processing to handle 1,000+ payments per batch.",
+    "stack": ["Python", "Pydantic AI", "Django", "React", "Airwallex"],
+    "link": "https://remofirst.com",
+    "logo": "logos/remofirst.png",
+    "year": "2025",
+    "label": "Work",
+    "status": "live",
+    "featured": false
   },
   {
     "name": "Brinix",
@@ -38,44 +76,6 @@
     "featured": true
   },
   {
-    "name": "ubot",
-    "tagline": "Distributed marketplace-automation fleet",
-    "description": "A horizontally-scaled control plane for marketplace seller automation. A single Django image runs four roles — web, worker, scheduler, and a per-shop agent — where a central control plane orchestrates a fleet of per-shop agent VMs. Each agent reaches a shared PostgreSQL (through PgBouncer) over a private WireGuard mesh (NetBird), so shops scale out one VM each while all state stays central. A push to main auto-deploys the control plane and rebuilds every agent in the fleet.",
-    "stack": ["Django", "Distributed Systems", "PostgreSQL", "PgBouncer", "NetBird / WireGuard", "Dokploy"],
-    "link": "https://ubot.yuzbir.agency",
-    "logo": "logos/ubot.png",
-    "year": "2025",
-    "label": "Indie",
-    "status": "project",
-    "featured": true
-  },
-  {
-    "name": "TurboDeals",
-    "tagline": "Car marketplace price intelligence",
-    "description": "A car marketplace intelligence platform — I scrape turbo.az listings, price every car against real comparables, and alert users the moment something appears well below market value. Django/Ninja backend, an Expo/React Native mobile app, and a server-rendered web app share one API.",
-    "stack": ["Django", "React Native", "Expo", "PostgreSQL", "Dramatiq"],
-    "link": "https://turbodeals.yuzbir.agency",
-    "logo": "logos/turbodeals.png",
-    "appStore": "https://apps.apple.com/az/app/turbodeals/id6802421907",
-    "playStore": "https://play.google.com/store/apps/details?id=agency.yuzbir.turbodeals",
-    "year": "2026",
-    "label": "Indie",
-    "status": "project",
-    "featured": true
-  },
-  {
-    "name": "RemoFirst",
-    "tagline": "AI interviewer + payments at a global payroll platform",
-    "description": "In the Contractors product of a global hiring & payroll platform, I built the first version of RemoHire — a multi-agent AI interviewer (Pydantic AI) that gathers job requirements from clients, with separate agents for asking questions, extracting requirements, and keeping the conversation on track. I also integrated Airwallex for real-time payouts and rewrote payment-file processing to handle 1,000+ payments per batch.",
-    "stack": ["Python", "Pydantic AI", "Django", "React", "Airwallex"],
-    "link": "https://remofirst.com",
-    "logo": "logos/remofirst.png",
-    "year": "2025",
-    "label": "Work",
-    "status": "live",
-    "featured": false
-  },
-  {
     "name": "dmpservice",
     "tagline": "Supply-chain management SaaS",
     "description": "Part of the team building a supply-chain management SaaS on a microservices architecture with CQRS and Event Sourcing — I designed and implemented services, database schemas, deployment, and monitoring.",
@@ -96,7 +96,7 @@
     "logo": "logos/itopix.jpg",
     "year": "2023",
     "label": "Startup",
-    "status": "project",
+    "status": "offline",
     "featured": false
   },
   {

@@ -17,7 +17,7 @@ const base = import.meta.env.BASE_URL;
               <span class="svc__name">{p.name}</span>
               <span class="svc__meta">{p.label?.toLowerCase()} · {p.year}</span>
             </div>
-            <span class="svc__status"><span class="dot"></span>live</span>
+            <span class={p.status === 'live' ? 'svc__status' : 'svc__status is-muted'}><span class="dot"></span>{p.status}</span>
           </div>
           <p class="svc__desc svc__desc--full">{p.description}</p>
           <div class="svc__stack">{p.stack.map((s) => <span>{s}</span>)}</div>

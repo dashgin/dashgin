@@ -166,6 +166,8 @@ a.stat:hover { border-color: var(--cyan); }
   margin-left: auto; display: flex; align-items: center; gap: 5px;
   font-family: var(--mono); font-size: 0.6rem; color: var(--green);
 }
+.svc__status.is-muted { color: var(--faint); }
+.svc__status.is-muted .dot { background: var(--faint); }
 .svc__desc {
   color: var(--dim); font-size: 0.82rem; line-height: 1.55;
   display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
