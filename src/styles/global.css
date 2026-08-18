@@ -248,7 +248,11 @@ a.stat:hover { border-color: var(--cyan); }
   .hero, .lower { grid-template-columns: 1fr; }
   .xp-grid { grid-template-columns: 1fr; }
   .statusbar { flex-wrap: wrap; }
-  .statusbar .right { width: 100%; margin-left: 0; }
+  .statusbar .right {
+    width: 100%; margin-left: 0;
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   .dot--pulse { animation: none; }
