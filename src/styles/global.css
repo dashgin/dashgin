@@ -139,11 +139,16 @@ a.stat:hover { border-color: var(--cyan); }
 /* ---- services grid ---- */
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0.9rem; }
 .svc {
+  position: relative;
   padding: 1rem 1.1rem;
   display: flex; flex-direction: column; gap: 0.6rem;
   transition: border-color 0.15s;
 }
 .svc:hover { border-color: var(--line-b); }
+/* Card-wide "click anywhere to open the live link" without nesting an <a>
+   inside another — that swallowed clicks on app store / play links. */
+.svc__cover { position: absolute; inset: 0; z-index: 0; }
+.svc__links { position: relative; z-index: 1; }
 .svc__top { display: flex; align-items: center; gap: 10px; }
 .svc__logo {
   width: 36px; height: 36px; border-radius: 8px; flex: none;

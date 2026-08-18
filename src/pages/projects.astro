@@ -22,9 +22,9 @@ const base = import.meta.env.BASE_URL;
           <p class="svc__desc svc__desc--full">{p.description}</p>
           <div class="svc__stack">{p.stack.map((s) => <span>{s}</span>)}</div>
           <div class="svc__links">
-            {p.link && <a href={p.link}><span>↗ live</span></a>}
-            {p.appStore && <a href={p.appStore}><span>↗ app store</span></a>}
-            {p.playStore && <a href={p.playStore}><span>↗ play store</span></a>}
+            {p.link && <a href={p.link} target="_blank" rel="noopener noreferrer"><span>↗ live</span></a>}
+            {p.appStore && <a href={p.appStore} target="_blank" rel="noopener noreferrer"><span>↗ app store</span></a>}
+            {p.playStore && <a href={p.playStore} target="_blank" rel="noopener noreferrer"><span>↗ play store</span></a>}
           </div>
         </div>
       ))}

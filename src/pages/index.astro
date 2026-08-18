@@ -72,7 +72,8 @@ const experience = [
     <div class="sec-head">services <span class="faint">// {projects.length} running</span></div>
     <div class="grid">
       {projects.map((p) => (
-        <a class="panel svc" href={p.link || `${base}projects`}>
+        <div class="panel svc">
+          <a class="svc__cover" href={p.link || `${base}projects`} aria-label={p.name}></a>
           <div class="svc__top">
             <div class={p.logo ? 'svc__logo has-img' : 'svc__logo'}>
               {p.logo ? <img src={`${base}${p.logo}`} alt={p.name} /> : p.name.charAt(0)}
@@ -86,11 +87,11 @@ const experience = [
           <p class="svc__desc">{p.description}</p>
           <div class="svc__stack">{p.stack.slice(0, 4).map((s) => <span>{s}</span>)}</div>
           <div class="svc__links">
-            {p.link && <span>↗ live</span>}
-            {p.appStore && <span>↗ app store</span>}
-            {p.playStore && <span>↗ play</span>}
+            {p.link && <a href={p.link} target="_blank" rel="noopener noreferrer"><span>↗ live</span></a>}
+            {p.appStore && <a href={p.appStore} target="_blank" rel="noopener noreferrer"><span>↗ app store</span></a>}
+            {p.playStore && <a href={p.playStore} target="_blank" rel="noopener noreferrer"><span>↗ play</span></a>}
           </div>
-        </a>
+        </div>
       ))}
     </div>
   </section>
