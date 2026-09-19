@@ -45,6 +45,7 @@ const experience = [
         <a class="stat" href={`${base}resume.pdf`}><b>5</b><i>years shipping</i></a>
         <a class="stat" href={`${base}blog`}><b>{posts.length}</b><i>field reports</i></a>
         <a class="stat" href={`${base}projects`}><b>3</b><i>platforms shipped</i></a>
+        {site.show.contributions && <a class="stat" href="#contributions"><b>{contributions.length}</b><i>upstream prs</i></a>}
       </div>
     </section>
     )}
@@ -122,7 +123,7 @@ const experience = [
       </section>
       )}
       {site.show.contributions && (
-      <section class="panel pad">
+      <section class="panel pad" id="contributions">
         <div class="p-head">contributions <span class="tag">upstream</span></div>
         {contributions.map((c) => (
           <a class="doc" href={c.link} target="_blank" rel="noopener noreferrer">
