@@ -21,7 +21,7 @@ const experience = [
 ];
 ---
 <BaseLayout>
-  <!-- ID + STATS -->
+  <!-- ID + EVENT LOG -->
   <div class="hero">
     <section class="panel pad">
       <div class="eyebrow">operator</div>
@@ -37,15 +37,53 @@ const experience = [
       </div>
     </section>
 
-    {site.show.stats && (
-    <section class="panel pad stats-panel">
-      <div class="p-head">status <span class="right faint" id="uptime">—</span></div>
-      <div class="stats">
-        <a class="stat" href={`${base}projects`}><b>{projects.length}</b><i>projects built</i></a>
-        <a class="stat" href={`${base}resume.pdf`}><b>5</b><i>years of experience</i></a>
-        <a class="stat" href={`${base}blog`}><b>{posts.length}</b><i>blog posts</i></a>
-        <a class="stat" href={`${base}projects`}><b>3</b><i>platforms: web, ios, android</i></a>
-        {site.show.contributions && <a class="stat" href="#contributions"><b>{contributions.length}</b><i>open-source prs</i></a>}
+    {site.show.eventLog && (
+    <section class="panel pad">
+      <div class="p-head">event log <span class="tag">replay</span></div>
+      <div class="log" id="log"></div>
+    </section>
+    )}
+  </div>
+
+  <!-- STATUS -->
+  {site.show.stats && (
+  <section class="panel pad stats-panel">
+    <div class="p-head">status <span class="right faint" id="uptime">—</span></div>
+    <div class="stats">
+      <a class="stat" href={`${base}projects`}><b>{projects.length}</b><i>projects built</i></a>
+      <a class="stat" href={`${base}resume.pdf`}><b>5</b><i>years of experience</i></a>
+      <a class="stat" href={`${base}blog`}><b>{posts.length}</b><i>blog posts</i></a>
+      <a class="stat" href={`${base}projects`}><b>3</b><i>platforms: web, ios, android</i></a>
+      {site.show.contributions && <a class="stat" href="#contributions"><b>{contributions.length}</b><i>open-source prs</i></a>}
+    </div>
+  </section>
+  )}
+
+  <!-- FIELD REPORTS + CONTRIBUTIONS -->
+  <div class="lower">
+    {site.show.fieldReports && (
+    <section class="panel pad">
+      <div class="p-head">field reports</div>
+      <div class="doc-list">
+        {posts.map((p) => (
+          <a class="doc" href={`${base}blog/${p.slug}`}>
+            <span class="doc__date">{fmt(p.data.pubDate)}</span>
+            <span class="doc__title">{p.data.title}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+    )}
+    {site.show.contributions && (
+    <section class="panel pad" id="contributions">
+      <div class="p-head">contributions <span class="tag">upstream</span></div>
+      <div class="doc-list">
+        {contributions.map((c) => (
+          <a class="doc" href={c.link} target="_blank" rel="noopener noreferrer">
+            <span class="doc__date">{c.repo} · {c.year} · {c.status}</span>
+            <span class="doc__title">{c.title}</span>
+          </a>
+        ))}
       </div>
     </section>
     )}
@@ -100,46 +138,16 @@ const experience = [
   </section>
   )}
 
-  <!-- LOG + FIELD REPORTS -->
-  <div class="lower">
-    {site.show.eventLog && (
-    <section class="panel pad">
-      <div class="p-head">event log <span class="tag">replay</span></div>
-      <div class="log" id="log"></div>
-    </section>
-    )}
-
-    {(site.show.fieldReports || site.show.contributions) && (
-    <div class="sidecol">
-      {site.show.fieldReports && (
-      <section class="panel pad">
-        <div class="p-head">field reports</div>
-        {posts.map((p) => (
-          <a class="doc" href={`${base}blog/${p.slug}`}>
-            <span class="doc__date">{fmt(p.data.pubDate)}</span>
-            <span class="doc__title">{p.data.title}</span>
-          </a>
-        ))}
-      </section>
-      )}
-      {site.show.contributions && (
-      <section class="panel pad" id="contributions">
-        <div class="p-head">contributions <span class="tag">upstream</span></div>
-        {contributions.map((c) => (
-          <a class="doc" href={c.link} target="_blank" rel="noopener noreferrer">
-            <span class="doc__date">{c.repo} · {c.year} · {c.status}</span>
-            <span class="doc__title">{c.title}</span>
-          </a>
-        ))}
-      </section>
-      )}
-    </div>
-    )}
-  </div>
-
   <script is:inline>
     (() => {
       const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* show the newest 3 of each list, scroll for the rest */
+      const fitLists = () => document.querySelectorAll('.doc-list').forEach((l) => {
+        const third = l.children[2];
+        l.style.maxHeight = l.children.length > 3 ? `${third.offsetTop + third.offsetHeight}px` : '';
+      });
+      fitLists(); addEventListener('resize', fitLists);
 
       /* uptime since first shipped product */
       const up = document.getElementById('uptime');
