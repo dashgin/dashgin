@@ -4,8 +4,8 @@ import '../styles/global.css';
 const { title, description } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const year = new Date().getFullYear();
-const pageTitle = title ? `${title} · dashgin` : 'dashgin.control — Dashgin Khudiyev';
-const desc = description || 'Software engineer — Python & Django backends, applied AI, self-hosted infrastructure.';
+const pageTitle = title ? `${title} · dashgin` : 'dashgin.control · Dashgin Khudiyev';
+const desc = description || 'Software engineer: Python & Django backends, applied AI, self-hosted infrastructure.';
 const path = Astro.url.pathname;
 const isActive = (p) => path.startsWith(base + p);
 ---
@@ -19,7 +19,7 @@ const isActive = (p) => path.startsWith(base + p);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230b0e14'/><circle cx='50' cy='50' r='14' fill='%233ddc97'/></svg>" />
-    <link rel="alternate" type="application/rss+xml" title="dashgin — field reports" href={`${base}rss.xml`} />
+    <link rel="alternate" type="application/rss+xml" title="dashgin · field reports" href={`${base}rss.xml`} />
     <link rel="canonical" href={new URL(path, Astro.site ?? 'https://www.dashgin.com')} />
   </head>
   <body>

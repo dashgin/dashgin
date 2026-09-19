@@ -1,5 +1,5 @@
 /* ============================================================
-   dashgin.control — design system
+   dashgin.control: design system
    Flat ops-dashboard: dark panels, IBM Plex Mono + Sans,
    green = status, cyan = interactive, amber = warn.
    ============================================================ */
@@ -148,7 +148,7 @@ a.stat:hover { border-color: var(--cyan); }
 }
 .svc:hover { border-color: var(--line-b); }
 /* Card-wide "click anywhere to open the live link" without nesting an <a>
-   inside another — that swallowed clicks on app store / play links. */
+   inside another, which swallowed clicks on app store / play links. */
 .svc__cover { position: absolute; inset: 0; z-index: 0; }
 .svc__links { position: relative; z-index: 1; }
 .svc__top { display: flex; align-items: center; gap: 10px; }
@@ -184,7 +184,7 @@ a.stat:hover { border-color: var(--cyan); }
 
 /* ---- lower: event log + contributions ---- */
 .lower { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-/* Grid items default to min-width:auto — their unbreakable content (the nowrap
+/* Grid items default to min-width:auto; their unbreakable content (the nowrap
    log lines) sets a min-content floor wider than the viewport on mobile, which
    blows out the hero track (and the page) regardless of overflow:hidden set deeper
    inside .log. This is the actual fix; the .log rules below just make the

@@ -6,7 +6,7 @@ import sanitizeHtml from 'sanitize-html';
 const parser = new MarkdownIt();
 
 // Full-content feed. dev.to and Hashnode import <content:encoded>, so shipping
-// the whole post here is what makes RSS-based syndication actually work — a
+// the whole post here is what makes RSS-based syndication actually work: a
 // description-only feed imports a stub. Relative links are rewritten to
 // absolute below, since off-site readers have no origin to resolve them against.
 export async function GET(context) {
@@ -17,7 +17,7 @@ export async function GET(context) {
     .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
   return rss({
-    title: 'dashgin — field reports',
+    title: 'dashgin · field reports',
     description:
       'Writing on self-hosting, AI agents, cost, and shipping full-stack products.',
     site: context.site,

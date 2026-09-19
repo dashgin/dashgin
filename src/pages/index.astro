@@ -13,7 +13,7 @@ const fmt = (d) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'shor
 
 const experience = [
   { company: 'EPAM Systems', role: 'Senior Software Engineer', dates: '2026 → now',
-    note: 'High-load enterprise applications — Python + React, system architecture and microservices.' },
+    note: 'High-load enterprise applications: Python + React, system architecture and microservices.' },
   { company: 'Remofirst', role: 'Software Engineer', dates: '2025 → 2026',
     note: 'Global hiring & payroll platform. Multi-agent AI interviewer on Pydantic AI, Airwallex payouts, 1,000+ payment batches.' },
   { company: 'Prodigitrack', role: 'Lead / Founding Engineer', dates: '2022 → 2025',
@@ -29,7 +29,7 @@ const experience = [
       <p class="role">software engineer · ai systems · self-hosted</p>
       <p class="bio">
         Python &amp; Django backends, LLM products built with data privacy in mind,
-        payment-critical systems, React &amp; React Native up front — running on
+        payment-critical systems, React &amp; React Native up front, running on
         infrastructure I operate myself.
       </p>
       <div class="chips">
@@ -55,7 +55,7 @@ const experience = [
   <!-- STATUS -->
   {site.show.stats && (
   <section class="panel pad stats-panel">
-    <div class="p-head">status <span class="right faint" id="uptime">—</span></div>
+    <div class="p-head">status <span class="right faint" id="uptime"></span></div>
     <div class="stats">
       <a class="stat" href={`${base}projects`}><b>{projects.length}</b><i>projects built</i></a>
       <a class="stat" href={`${base}resume.pdf`}><b>5</b><i>years of experience</i></a>
@@ -89,7 +89,7 @@ const experience = [
     )}
   </div>
 
-  {/* EXPERIENCE — toggle via src/data/site.json → show.experience */}
+  {/* EXPERIENCE: toggle via src/data/site.json → show.experience */}
   {site.show.experience && (
   <section>
     <div class="sec-head">experience <span class="faint">// 2022 → now</span></div>
@@ -164,7 +164,7 @@ const experience = [
         tickUp(); setInterval(tickUp, 1000);
       }
 
-      /* event log — slow replay */
+      /* event log: slow replay */
       const log = document.getElementById('log');
       if (log) {
         const entries = [
