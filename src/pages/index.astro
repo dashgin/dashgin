@@ -21,7 +21,7 @@ const experience = [
 ];
 ---
 <BaseLayout>
-  <!-- ID + EVENT LOG -->
+  <!-- ID + FIELD REPORTS -->
   <div class="hero">
     <section class="panel pad">
       <div class="eyebrow">operator</div>
@@ -37,10 +37,17 @@ const experience = [
       </div>
     </section>
 
-    {site.show.eventLog && (
+    {site.show.fieldReports && (
     <section class="panel pad">
-      <div class="p-head">event log <span class="tag">replay</span></div>
-      <div class="log" id="log"></div>
+      <div class="p-head">field reports</div>
+      <div class="doc-list">
+        {posts.map((p) => (
+          <a class="doc" href={`${base}blog/${p.slug}`}>
+            <span class="doc__date">{fmt(p.data.pubDate)}</span>
+            <span class="doc__title">{p.data.title}</span>
+          </a>
+        ))}
+      </div>
     </section>
     )}
   </div>
@@ -59,19 +66,12 @@ const experience = [
   </section>
   )}
 
-  <!-- FIELD REPORTS + CONTRIBUTIONS -->
+  <!-- EVENT LOG + CONTRIBUTIONS -->
   <div class="lower">
-    {site.show.fieldReports && (
+    {site.show.eventLog && (
     <section class="panel pad">
-      <div class="p-head">field reports</div>
-      <div class="doc-list">
-        {posts.map((p) => (
-          <a class="doc" href={`${base}blog/${p.slug}`}>
-            <span class="doc__date">{fmt(p.data.pubDate)}</span>
-            <span class="doc__title">{p.data.title}</span>
-          </a>
-        ))}
-      </div>
+      <div class="p-head">event log <span class="tag">replay</span></div>
+      <div class="log" id="log"></div>
     </section>
     )}
     {site.show.contributions && (

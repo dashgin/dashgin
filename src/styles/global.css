@@ -181,7 +181,7 @@ a.stat:hover { border-color: var(--cyan); }
 .svc__links { display: flex; gap: 12px; font-family: var(--mono); font-size: 0.64rem; color: var(--faint); margin-top: auto; }
 .svc:hover .svc__links span { color: var(--cyan); }
 
-/* ---- lower: field reports + contributions ---- */
+/* ---- lower: event log + contributions ---- */
 .lower { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 /* Grid items default to min-width:auto — their unbreakable content (the nowrap
    log lines) sets a min-content floor wider than the viewport on mobile, which
