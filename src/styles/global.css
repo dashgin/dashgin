@@ -121,11 +121,12 @@ h1 { font-size: clamp(1.9rem, 4.5vw, 2.6rem); font-weight: 700; letter-spacing: 
 /* ---- stats ---- */
 .stats-panel { display: flex; flex-direction: column; }
 .stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; flex: 1; }
-.stat { border: 1px solid var(--line); border-radius: 8px; padding: 0.6rem 0.8rem;
+.stat { border: 1px solid var(--line); border-radius: 8px; padding: 0.5rem 0.8rem;
         display: block; transition: border-color 0.15s; }
 a.stat:hover { border-color: var(--cyan); }
-.stat b { font-size: 1.5rem; font-weight: 600; color: var(--cyan); display: block; }
+.stat b { font-size: 1.5rem; font-weight: 600; color: var(--cyan); display: block; line-height: 1.2; }
 .stat i {
+  display: block; line-height: 1.4; margin-top: 4px;
   font-style: normal; font-family: var(--mono); font-size: 0.58rem;
   letter-spacing: 0.06em; color: var(--faint); text-transform: uppercase;
 }
