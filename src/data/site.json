@@ -4,6 +4,7 @@
     "services": true,
     "eventLog": true,
     "fieldReports": true,
-    "stats": true
+    "stats": true,
+    "contributions": true
   }
 }

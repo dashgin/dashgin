@@ -1,5 +1,16 @@
 [
   {
+    "name": "pointclick",
+    "tagline": "Browser MCP server for AI agents",
+    "description": "A browser MCP server for AI agents: in a benchmark with Claude it took 7 turns where Playwright MCP took 13, at half the cost. The page comes back as a numbered list of what the agent can click, and eight tools cover the rest in under 1,000 tokens. Building it turned up a Playwright bug; I sent the fix upstream.",
+    "stack": ["Python", "Playwright", "MCP", "Chromium"],
+    "repo": "https://github.com/dashgin/pointclick",
+    "year": "2026",
+    "label": "Open source",
+    "status": "project",
+    "featured": true
+  },
+  {
     "name": "TurboDeals",
     "tagline": "Car marketplace price intelligence",
     "description": "A car marketplace intelligence platform — I scrape turbo.az listings, price every car against real comparables, and alert users the moment something appears well below market value. Django/Ninja backend, an Expo/React Native mobile app, and a server-rendered web app share one API.",

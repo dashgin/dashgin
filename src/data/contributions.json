@@ -1,0 +1,30 @@
+[
+  {
+    "repo": "microsoft/playwright",
+    "title": "Fix response.finished() hanging after a 204, which stalled Playwright MCP clicks by 5 s",
+    "year": "2026",
+    "status": "open",
+    "link": "https://github.com/microsoft/playwright/pull/42787"
+  },
+  {
+    "repo": "jazzband/django-defender",
+    "title": "Fix strip_keys for IPv6-mapped IPv4 addresses",
+    "year": "2022",
+    "status": "merged",
+    "link": "https://github.com/jazzband/django-defender/pull/217"
+  },
+  {
+    "repo": "jazzband/django-defender",
+    "title": "Fix the admin URL order that made /admin/defender/blocks/ return 404",
+    "year": "2022",
+    "status": "merged",
+    "link": "https://github.com/jazzband/django-defender/pull/216"
+  },
+  {
+    "repo": "scrapinghub/price-parser",
+    "title": "Correct the Azerbaijani manat (AZN) currency symbols",
+    "year": "2022",
+    "status": "open",
+    "link": "https://github.com/scrapinghub/price-parser/pull/51"
+  }
+]
