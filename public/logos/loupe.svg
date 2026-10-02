@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <!-- Loupe. The square is an artboard; the lens sits on its bottom-right
+       corner. The arc inside the lens is that same corner, concentric with it
+       (centre 13.3,13.3) at radius 8.2 instead of 3.2 — the corner magnified,
+       which is the whole product in one shape. The frame is cut by a mask, so
+       the gap is transparent and the lens reads as in front on any ground. -->
+  <style>
+    .ink { stroke: #1b1c1a }
+    .mag { stroke: #4a6741 }
+    @media (prefers-color-scheme: dark) {
+      .ink { stroke: #e8e9e6 }
+      .mag { stroke: #7fa06f }
+    }
+  </style>
+  <mask id="cut" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+    <rect width="24" height="24" fill="#fff"/>
+    <circle cx="16" cy="16" r="6.8" fill="#000"/>
+  </mask>
+  <clipPath id="lens"><circle cx="16" cy="16" r="5.5"/></clipPath>
+  <rect class="ink" x="2.5" y="2.5" width="14" height="14" rx="3.2"
+        fill="none" stroke-width="2" stroke-linejoin="round" mask="url(#cut)"/>
+  <g clip-path="url(#lens)">
+    <path class="mag" d="M21.5 4 L21.5 13.3 A8.2 8.2 0 0 1 13.3 21.5 L4 21.5"
+          fill="none" stroke-width="2.8"/>
+  </g>
+  <circle class="ink" cx="16" cy="16" r="5.5" fill="none" stroke-width="2"/>
+</svg>

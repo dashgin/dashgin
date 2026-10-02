@@ -1,5 +1,29 @@
 [
   {
+    "name": "Loupe",
+    "tagline": "A design tool whose designer is a coding agent",
+    "description": "Your coding agent draws the screens over MCP, and Loupe renders each one in a real browser, measures it, and checks it against your design system. The options sit side by side on a board: you pick one and say why, and the agent builds from the version you picked, not a description of it. Slides and launch posts go on the same board.",
+    "stack": ["Django", "React", "MCP", "Playwright"],
+    "link": "https://loupehq.dev",
+    "logo": "logos/loupe.svg",
+    "year": "2026",
+    "label": "Indie",
+    "status": "live",
+    "featured": true
+  },
+  {
+    "name": "Puck",
+    "tagline": "A local Mac companion you talk to",
+    "description": "A fully local macOS companion that lives in the notch. Hold the globe key, point at something and say what you want, and Puck does it on the Mac in front of you. A grammar decides what you meant, a gate checks it, and a local model only writes the words it says back. It asks before anything that can't be undone. Puck Remote turns an iPhone into a second talk key.",
+    "stack": ["Swift", "Python", "MLX", "Expo"],
+    "link": "https://puck.dashgin.com",
+    "logo": "logos/puck.svg",
+    "year": "2026",
+    "label": "Indie",
+    "status": "project",
+    "featured": true
+  },
+  {
     "name": "pointclick",
     "tagline": "Browser MCP server for AI agents",
     "description": "A browser MCP server for AI agents: in a benchmark with Claude it took 7 turns where Playwright MCP took 13, at half the cost. The page comes back as a numbered list of what the agent can click, and eight tools cover the rest in under 1,000 tokens. Building it turned up a Playwright bug; I sent the fix upstream.",
