@@ -8,17 +8,11 @@ Mill & Pike is a single-player game that runs offline. It does not collect, stor
 
 ## What the game collects
 
-Nothing. The game has no account or sign-in, and it makes no network connections. It contains no analytics, no advertising, no tracking and no crash-reporting services, and it does not ask for access to your contacts, photos, camera, microphone or location.
+Nothing. The game has no account or sign-in, and it makes no network connections. It contains no analytics, no advertising, no purchases, no tracking and no crash-reporting services, and it does not ask for access to your contacts, photos, camera, microphone or location.
 
 ## Your saved games
 
 Your progress and settings are saved on your phone and never leave it. We cannot see them and cannot restore them. Deleting the game deletes them. If your phone's own backup (for example iCloud or Google device backup) includes app data, that backup is handled by Apple or Google under their privacy policies.
-
-## Purchases
-
-The game is free to download and offers one optional in-app purchase that unlocks the full campaign. Apple (App Store) or Google (Google Play) handles the payment. We never see your name, email address or payment details. The store only tells the game whether the unlock has been bought on your account, so it can open the content and restore it on a new phone.
-
-Apple's privacy policy: [apple.com/legal/privacy](https://www.apple.com/legal/privacy/). Google's privacy policy: [policies.google.com/privacy](https://policies.google.com/privacy).
 
 ## Children
 
