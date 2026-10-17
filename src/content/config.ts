@@ -11,4 +11,14 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { blog };
+const appPrivacy = defineCollection({
+  type: 'content',
+  schema: z.object({
+    app: z.string(),
+    platforms: z.string(),
+    effective: z.coerce.date(),
+    contact: z.string().default('dashgin@praxis.az'),
+  }),
+});
+
+export const collections = { blog, 'app-privacy': appPrivacy };

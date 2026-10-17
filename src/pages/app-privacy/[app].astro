@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('app-privacy');
+  return entries.map((entry) => ({ params: { app: entry.slug }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const fmt = (d) => d.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+---
+<BaseLayout title={`${entry.data.app} privacy policy`} description={`Privacy policy for ${entry.data.app}.`}>
+  <article class="panel pad" style="max-width: 760px;">
+    <h1 style="font-size: clamp(1.5rem, 4vw, 2.1rem); margin-bottom: 0.4rem;">Privacy Policy</h1>
+    <p class="faint" style="margin-bottom: 1.6rem;">{entry.data.app}, {entry.data.platforms}. Effective {fmt(entry.data.effective)}.</p>
+    <div class="post-body">
+      <Content />
+      <h2>Contact</h2>
+      <p>Dashgin Khudiyev, developer of {entry.data.app}<br /><a href={`mailto:${entry.data.contact}`}>{entry.data.contact}</a></p>
+    </div>
+  </article>
+</BaseLayout>
