@@ -17,7 +17,7 @@ const appPrivacy = defineCollection({
     app: z.string(),
     platforms: z.string(),
     effective: z.coerce.date(),
-    contact: z.string().default('dashgin@praxis.az'),
+    contact: z.string().default('hello@dashgin.com'),
   }),
 });
 
