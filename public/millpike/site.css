@@ -97,7 +97,7 @@ h1 { margin: 0; font-size: clamp(40px, 7vw, 72px); line-height: 0.95; color: var
   .brand img { width: 64px; height: 64px; border-radius: 15px; }
   .hero { min-height: auto; justify-content: flex-start; }
   .hero picture { position: relative; display: block; height: 58svh; min-height: 380px; }
-  .hero picture img { object-position: 50% 22%; }
+  .hero picture img { object-position: 66% 60%; }
   .hero::after { bottom: auto; height: max(58svh, 380px); background: linear-gradient(180deg, rgba(46,94,78,0) 55%, var(--ground) 100%); }
   .hero-in { margin-top: -56px; }
   .sheet { margin: 16px 16px 28px; padding: 22px 18px 26px; }
