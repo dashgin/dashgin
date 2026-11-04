@@ -8,7 +8,7 @@ Mill & Pike is a single-player game that runs offline. It does not collect, stor
 
 ## What the game collects
 
-Nothing. The game has no account or sign-in, and it makes no network connections. It contains no analytics, no advertising, no purchases, no tracking and no crash-reporting services, and it does not ask for access to your contacts, photos, camera, microphone or location.
+Nothing. The game has no account or sign-in, and it makes no network connections of its own. It contains no analytics, no advertising, no tracking and no crash-reporting services, and it does not ask for access to your contacts, photos, camera, microphone or location. The one optional purchase, the full game, is handled entirely by the App Store or Google Play; we receive no payment details or personal data from it.
 
 ## Your saved games
 
